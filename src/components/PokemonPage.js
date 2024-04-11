@@ -1,21 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import PokemonCollection from "./PokemonCollection";
 import PokemonForm from "./PokemonForm";
 import Search from "./Search";
 import { Container } from "semantic-ui-react";
 
-function PokemonPage() {
+function PokemonPage({pokemon}) {
+  const [pokemonData, setPokemonData] = useState(pokemon)
+
+  function pokemonSearch(input) {
+    console.log(input)
+
+    pokemonData.filter((pokemon) => pokemon.name === input)
+  }
+
   return (
     <Container>
       <h1>Pokemon Searcher</h1>
       <br />
-      <PokemonForm />
+      <PokemonForm pokemonData={pokemon}/>
       <br />
-      <Search />
+      <Search pokemonData={pokemon} pokemonSearch={pokemonSearch}/>
       <br />
-      <PokemonCollection />
+      <PokemonCollection pokemonData={pokemon}/>
     </Container>
   );
 }
 
 export default PokemonPage;
+
+// App
+  // PokemonPage
+    // Container
+    // PokemonForm
+    // Search
+    // PokemonCollection
+      // PokemonCard

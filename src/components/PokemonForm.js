@@ -33,3 +33,11 @@ function PokemonForm() {
 }
 
 export default PokemonForm;
+
+// App
+  // PokemonPage
+    // Container
+    // PokemonForm
+    // Search
+    // PokemonCollection
+      // PokemonCard
