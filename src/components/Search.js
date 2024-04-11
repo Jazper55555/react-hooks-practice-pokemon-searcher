@@ -1,11 +1,11 @@
 import React from "react";
 
-function Search({pokemonData, pokemonSearch}) {
+function Search({setSearchInput}) {
 
   function handleInput(e) {
-    const searchInput = e.target.value.toLowerCase()
+    const searchValue = e.target.value.toLowerCase()
     
-    pokemonSearch(searchInput)
+    setSearchInput(searchValue)
   }
 
   return (
